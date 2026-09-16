@@ -10,4 +10,4 @@ In supported browsers, connect a trainer and reference power meter through **Dev
 
 Recordings autosave in browser storage every five seconds and on Stop. Export a separate copy before clearing site data. Hardware behavior still needs testing on each browser/OS/device combination; automated checks use simulated Bluetooth devices. Closing or suspending the browser cannot guarantee that a trainer receives Stop.
 
-Built from private source revision `8ff1595` with Go 1.26.0. Published assets only; not an open-source release.
+Built from private source revision `41ba774` with Go 1.26.0. Published assets only; not an open-source release.
