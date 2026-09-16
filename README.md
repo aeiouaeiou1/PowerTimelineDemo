@@ -10,4 +10,4 @@ In supported browsers, connect a trainer and reference power meter through **Dev
 
 Recordings autosave in browser storage every five seconds and on Stop. Export a separate copy before clearing site data. Hardware behavior still needs testing on each browser/OS/device combination; automated checks use simulated Bluetooth devices. Closing or suspending the browser cannot guarantee that a trainer receives Stop.
 
-Built from private source revision `166ee64` with Go 1.26.0. Published assets only; not an open-source release.
+Built from private source revision `54e915c` with TinyGo 0.42.0 (Go 1.26.0) and Binaryen 132. The app loads the smaller TinyGo worker from `wasm-tinygo/`; the previous `wasm/` assets remain available for cached older pages. Published assets only; not an open-source release.
