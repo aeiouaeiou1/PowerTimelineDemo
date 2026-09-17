@@ -1,6 +1,6 @@
 # Power Timeline browser demo
 
-[Open the browser app](https://aeiouaeiou1.github.io/PowerTimelineDemo/) · [Download the desktop preview](https://github.com/aeiouaeiou1/PowerTimelineDemo/releases/tag/v0.1.0-preview.1)
+[Open the browser app](https://aeiouaeiou1.github.io/PowerTimelineDemo/) · [Download the desktop preview](https://github.com/aeiouaeiou1/PowerTimelineDemo/releases/tag/v0.1.0-preview.2)
 
 This repository hosts compiled Power Timeline builds: the HTML, CSS, JavaScript and Go WebAssembly browser demo, plus packaged desktop apps in Releases. It has no Go/TypeScript source, source-project history, or personal recordings.
 
@@ -10,6 +10,10 @@ In supported browsers, connect a trainer and reference power meter through **Dev
 
 Recordings autosave in browser storage every five seconds and on Stop. Export a separate copy before clearing site data. Hardware behavior still needs testing on each browser/OS/device combination; automated checks use simulated Bluetooth devices. Closing or suspending the browser cannot guarantee that a trainer receives Stop.
 
-Built from private source revision `abd4bd1` with TinyGo 0.42.0 (Go 1.26.0) and Binaryen 132. The app loads the smaller TinyGo worker from `wasm-tinygo/`; the previous `wasm/` assets remain available for cached older pages. Published assets only; not an open-source release.
+Built from private source revision `7f42d05` with TinyGo 0.42.0 (Go 1.26.0) and Binaryen 132. The app loads the smaller TinyGo worker from `wasm-tinygo/`; the previous `wasm/` assets remain available for cached older pages. Published assets only; not an open-source release.
 
 Desktop preview downloads cover macOS 12+, Windows 10/11, and Ubuntu 24.04+ on Intel/AMD x86-64 and ARM64. Use **Get the desktop app** in the browser demo, or choose a file from Releases. The release includes SHA-256 checksums and installation notes. Mac builds are ad-hoc signed but not notarized; Windows builds are not publisher-signed. Hardware support needs testing on each platform.
+
+The macOS DMGs include a styled, Retina drag-to-install window. Drag Power Timeline to Applications and open it there after the copy finishes. The preview still requires first-launch approval in macOS Privacy & Security because it is not notarized.
+
+Preview 2 also fixes Windows Bluetooth service discovery and cleans up device names and dropdown labels. Chrome chooses one Bluetooth device per chooser opening; repeat the chooser to add a second device and use both together.
