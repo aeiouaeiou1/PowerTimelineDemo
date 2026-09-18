@@ -10,6 +10,8 @@ Calibration now fits one model and shows its before/after fit error, average-pow
 
 New recordings preserve cadence and available left/right power derived from reported pedal balance. Use the chart checkboxes to display these metrics. Older CSVs remain supported, with missing metrics left unavailable. The synthetic demo includes cadence and reference leg power.
 
+FIT import accepts files with an omitted optional header checksum while still validating the full file checksum, including every member of chained FIT files. Corrupt or truncated files remain rejected.
+
 FIT imports align both files on their recorded UTC timestamps, preserving different start times, gaps, and zeros. The paired ride opens in Calibration and is saved locally as a derived CSV in Recent recordings. The original FIT files stay unchanged. Use the time-offset controls and **Estimate delay** to check alignment. Cadence and supported left/right balance are included when available. Uncompressed FIT files up to 16 MB each are supported. Import asks only for the two files. After fitting, use **Trainer for this model (optional)** beside **Save model** to associate the calibration with a live trainer. Leave it blank to save for comparison only; saving does not activate correction.
 
 The web introduction can be dismissed and restored with **Web info**. **Get the desktop app** stays permanently in the Overview header. **Recent recordings** collapses from its heading while keeping import/open controls available. These preferences are remembered locally across navigation and reloads.
@@ -26,7 +28,7 @@ In supported browsers, connect a trainer and reference power meter through **Dev
 
 Recordings autosave in browser storage every five seconds and on Stop. Export a separate copy before clearing site data. Hardware behavior still needs testing on each browser/OS/device combination; automated checks use simulated Bluetooth devices. Closing or suspending the browser cannot guarantee that a trainer receives Stop.
 
-Built from private source revision `963115b` with TinyGo 0.42.0 (Go 1.26.0) and Binaryen 132. The app loads its TinyGo worker from `wasm-tinygo/`. Legacy standard-Go Wasm assets have been removed. Published assets only; not an open-source release.
+Built from private source revision `60b806c` with TinyGo 0.42.0 (Go 1.26.0) and Binaryen 132. The app loads its TinyGo worker from `wasm-tinygo/`. Legacy standard-Go Wasm assets have been removed. Published assets only; not an open-source release.
 
 Desktop preview downloads cover macOS 12+, Windows 10/11, and Ubuntu 24.04+ on Intel/AMD x86-64 and ARM64. Use **Get the desktop app** in the browser demo, or choose a file from Releases. The release includes SHA-256 checksums and installation notes. Mac builds are ad-hoc signed but not notarized; Windows builds are not publisher-signed. Hardware support needs testing on each platform.
 
