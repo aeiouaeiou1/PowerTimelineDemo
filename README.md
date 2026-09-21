@@ -26,6 +26,12 @@ The web introduction can be dismissed and restored with **Web info**. **Get the 
 
 On phones, navigation opens from the menu and charts use the full content width. Input and fitting settings and additional metrics can collapse, while manual coefficients stay visible. Time alignment stays below the recording. Controls have larger touch targets, chart readouts support taps, and the workout display uses a two-column metric layout with a responsive graph.
 
+**Export to Zwift** is available in **Record → Calibration workout**, even without connected devices. Enter your Zwift FTP to download a `.zwo` file with the same watt targets, step order, and durations. Keep Zwift's FTP equal to that value and workout intensity at 100%. Copy the file into Zwift's workout folder and restart Zwift to load it; exporting does not remotely start or synchronize a workout. Use **Free recording** here while Zwift controls resistance.
+
+Desktop recordings can now include a separate **Zwift ERG request** trace when the optional bridge is running. Those command events survive CSV import and display in the web charts, but remain separate from measured power, sample counts, regression, and FIT exports. They represent the commands sent to the trainer, not the original workout target or inferred compensation. The browser cannot run the Wi-Fi bridge.
+
+Recent recordings stay first and collapse when a recording opens, giving its graph more room. Chart settings sit below the scrollbar, and page titles and supporting text are simpler.
+
 **Power curve** is now a tab in the Recordings and Calibration charts. Compare the best average trainer, reference, and corrected power at each duration, and tap or hover to see the effort times. Recordings uses the full session; Calibration uses its trimmed interval and current model. Curves share time-matched coverage, count coasting zeros, and exclude efforts crossing detected gaps. Each feed can achieve its best effort at a different moment. Zoom with the scroll wheel or pinch, or expand the duration table. The calculation uses the shared Go engine through TinyGo/WebAssembly.
 
 All trainer feeds now use the same one-second arithmetic sample mean. At timestamp 10, the app averages every received trainer reading after 9 and through 10, whether there are ten, three, or just one. No rate detection, interpolation, future readings, or filling empty seconds is used. An initial reading can display at time zero without adding a fictitious second of coverage. Left/right power shares the total’s samples and smoothing, so the traces stay aligned. Calibration, delay estimation, average-power comparison, and power curves use the same baseline. Small offset changes can select the same packets; the delay estimator prefers the smallest shift when scores tie. Calibration uses one power-band breakdown table, and **Estimate delay** is available directly in the time-alignment controls.
@@ -36,7 +42,7 @@ Bluetooth devices now automatically reconnect after sleep, disconnection, or 10 
 
 Recordings autosave in browser storage every five seconds and on Stop. Export a separate copy before clearing site data. Hardware behavior still needs testing on each browser/OS/device combination; automated checks use simulated Bluetooth devices. Closing or suspending the browser cannot guarantee that a trainer receives Stop.
 
-Built from private source revision `5c9bbb3` with TinyGo 0.42.0 (Go 1.26.0) and Binaryen 132. The app loads its TinyGo worker from `wasm-tinygo/`. Legacy standard-Go Wasm assets have been removed. Published assets only; not an open-source release.
+Built from private source revision `d85d7ad` with TinyGo 0.42.0 (Go 1.26.0) and Binaryen 132. The app loads its TinyGo worker from `wasm-tinygo/`. Legacy standard-Go Wasm assets have been removed. Published assets only; not an open-source release.
 
 Desktop preview downloads cover macOS 12+, Windows 10/11, and Ubuntu 24.04+ on Intel/AMD x86-64 and ARM64. Use **Get the desktop app** in the browser demo, or choose a file from Releases. The release includes SHA-256 checksums and installation notes. Mac builds are ad-hoc signed but not notarized; Windows builds are not publisher-signed. Hardware support needs testing on each platform.
 
