@@ -10,9 +10,11 @@ Select **Try demo ride** to explore a synthetic calibration recording. You can a
 
 **Record** is the live workspace for free recording and calibration workouts, with current power, elapsed time, sample count, and start/stop controls. **Recordings** holds recent rides, imports, and saved-ride analysis. Viewing a saved recording does not change the active capture. The live chart and Calibration charts use compact headers, with readouts and navigation below their plots and additional metrics inside **Chart settings**. Regression details and chart explanations expand on demand.
 
+Recordings, Calibration, and live recording share aligned power, cadence, and trainer-minus-reference panels with one cursor and timeline. Recordings and live sessions default to 10-second trailing display smoothing. Vertical ranges fit visible data with clean ticks; the difference axis includes zero without forcing symmetry. **Chart settings** can restore zero-based power and cadence axes. Missing paired data remains a gap. Model previews include a dashed corrected-error trace; display settings do not change recordings, regression inputs, or trainer output. **Follow live** tracks new readings, while zooming or panning keeps the selected interval.
+
 Calibration now fits one model and shows its before/after fit error, average-power agreement, and errors by power band. Results are labeled **Measured on the calibration recording**; they describe agreement on that recording, not independent validation on another ride.
 
-New recordings preserve cadence and available left/right power derived from reported pedal balance. Open **Chart settings** below the plot to display these metrics; closing the controls keeps enabled traces visible. Older CSVs remain supported, with missing metrics left unavailable. The synthetic demo includes cadence and reference leg power.
+New recordings preserve cadence and available left/right power derived from reported pedal balance. Cadence appears automatically when available; open **Chart settings** below the range control to hide cadence or add left/right power. Closing the controls keeps enabled traces visible. Older CSVs remain supported, with missing metrics left unavailable. The synthetic demo includes cadence and reference leg power.
 
 FIT import accepts files with an omitted optional header checksum while still validating the full file checksum, including every member of chained FIT files. Corrupt or truncated files remain rejected.
 
@@ -48,7 +50,7 @@ Recordings autosave in browser storage every five seconds and on Stop. Export a 
 
 The desktop virtual shifting simulator now supports separate front/rear shifting, configurable tooth counts, common 1x/2x drivetrain presets, and a gear-ratio table. These remain simulated devices; physical Zwift Ride and KICKR pairing for virtual shifting is not connected yet.
 
-Built from private source revision `83869bf` with TinyGo 0.42.0 (Go 1.26.0) and Binaryen 132. The app loads its TinyGo worker from `wasm-tinygo/`. Legacy standard-Go Wasm assets have been removed. Published assets only; not an open-source release.
+Built from private source revision `5b792fa` with TinyGo 0.42.0 (Go 1.26.0) and Binaryen 132. The app loads its TinyGo worker from `wasm-tinygo/`. Legacy standard-Go Wasm assets have been removed. Published assets only; not an open-source release.
 
 Desktop preview downloads cover macOS 12+, Windows 10/11, and Ubuntu 24.04+ on Intel/AMD x86-64 and ARM64. Use **Get the desktop app** in the browser demo, or choose a file from Releases. The release includes SHA-256 checksums and installation notes. Mac builds are ad-hoc signed but not notarized; Windows builds are not publisher-signed. Hardware support needs testing on each platform.
 
